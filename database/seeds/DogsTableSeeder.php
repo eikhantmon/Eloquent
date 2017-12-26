@@ -19,4 +19,9 @@ class DogsTableSeeder extends Seeder
 
       $this->call(DogsTableSeeder::class);
     }
+
+    public function contactName()
+    {
+      return $this->Contacts_Name;
+    }
 }
