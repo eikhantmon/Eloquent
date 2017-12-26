@@ -11,12 +11,14 @@ class CreateDogsTable extends Migration
      *
      * @return void
      */
+    
     public function up()
     {
         Schema::create('dogs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->timestamps();
+            $table->integer('age')->nullable();
+            $table->timestamps('');
         });
     }
 
