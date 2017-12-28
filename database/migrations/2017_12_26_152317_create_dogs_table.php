@@ -18,7 +18,8 @@ class CreateDogsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('age')->nullable();
-            $table->timestamps('');
+            $table->softDeletes();  
+            $table->timestamps();
         });
     }
 
