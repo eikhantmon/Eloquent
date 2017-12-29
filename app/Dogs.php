@@ -11,7 +11,7 @@ class Dogs extends Model
 
 	use SoftDeletes;
 
-	protected $dates = ['deleted_at'];
+	protected $dates = ['deleted_at','birthday'];
 
 	// protected static function boot()
 	// {
@@ -29,5 +29,17 @@ class Dogs extends Model
 	// function scopeAgeGreaterThan($query, $age) {
 	// 	return $query->where('age', '>', $age);
 	// }
+
+	function getNameAttribute($value){
+		return strtoupper($value);
+	}
+
+	function getIdNameAttribute(){
+	    return $this->attributes['id'] . ':' . $this->attributes['name'];
+	}
+
+	function setNameAttribute($value){
+    	return $this->attributes['name'] = strtoupper($value);
+	}
     
 }
