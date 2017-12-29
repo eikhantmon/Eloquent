@@ -13,6 +13,8 @@ class Dogs extends Model
 
 	protected $dates = ['deleted_at','birthday'];
 
+	protected $fillable = ['name'];
+
 	// protected static function boot()
 	// {
 	// 	parent::boot();
